@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'keboola/gooddata_writer/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "keboola-gooddata_writer"
+  spec.name          = "keboola-gooddata-writer"
   spec.version       = Keboola::GooddataWriter::VERSION
   spec.authors       = ["Roman Sklenář"]
   spec.email         = ["mail@romansklenar.cz"]
