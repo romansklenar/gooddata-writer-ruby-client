@@ -1,7 +1,7 @@
 require "keboola/gooddata_writer/version"
 
 module Keboola
-  module GooddataWriter
+  module GoodDataWriter
     # Your code goes here...
   end
 end

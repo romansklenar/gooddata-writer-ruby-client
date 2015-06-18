@@ -1,8 +1,8 @@
 require 'minitest_helper'
 
-class TestKeboola::GooddataWriter < Minitest::Test
+class TestKeboola::GoodDataWriter < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::Keboola::GooddataWriter::VERSION
+    refute_nil ::Keboola::GoodDataWriter::VERSION
   end
 
   def test_it_does_something_useful
