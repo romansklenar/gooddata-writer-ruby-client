@@ -6,7 +6,7 @@ require 'keboola/gooddata_writer/version'
 Gem::Specification.new do |spec|
   spec.name          = "keboola-gooddata_writer"
   spec.version       = Keboola::GooddataWriter::VERSION
-  spec.authors       = ["Roman Sklenář"]
+  spec.authors       = ["Roman Sklenář"]
   spec.email         = ["mail@romansklenar.cz"]
 
   if spec.respond_to?(:metadata)
