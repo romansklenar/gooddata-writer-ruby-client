@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://private-anon-df256c5fb-keboolagooddatawriter.apiary-mock.com/gooddata-writer/project-users?email=user5@clients.keboola.com&pid=qts6zrafhywwj4aafgt48jfwbm4zi5r7&writerId=writer1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.1
+      X-Storageapi-Token:
+      - 123-abcdefghjklmnopqrstuvxyz
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Fri, 19 Jun 2015 11:01:15 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.4.40
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Cache-Control:
+      - must-revalidate, no-cache, no-store, private
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '145'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"job_id","batch":120071782,"job":120071782,"status":"ok","url":"https:\/\/syrup.keboola.com\/gooddata-writer\/batch?writerId=writer1\u0026batchId=120071782"}'
+    http_version:
+  recorded_at: Fri, 19 Jun 2015 11:01:18 GMT
+recorded_with: VCR 2.9.3

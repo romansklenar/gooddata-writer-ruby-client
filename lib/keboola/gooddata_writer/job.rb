@@ -4,8 +4,12 @@ module Keboola
   module GoodDataWriter
 
     class Job < OpenStruct
+      def ok?
+        %w[ok].include?(status)
+      end
+
       def success?
-        %w[success ok].include?(status)
+        %w[success].include?(status)
       end
 
       def finished?

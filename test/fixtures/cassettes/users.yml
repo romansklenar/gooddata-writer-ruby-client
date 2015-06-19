@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://private-anon-df256c5fb-keboolagooddatawriter.apiary-mock.com/gooddata-writer/users?writerId=writer1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.1
+      X-Storageapi-Token:
+      - 123-abcdefghjklmnopqrstuvxyz
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Apiary-Ratelimit-Limit:
+      - '120'
+      X-Apiary-Ratelimit-Remaining:
+      - '119'
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,HEAD,POST,PUT,DELETE,TRACE,CONNECT
+      Access-Control-Max-Age:
+      - '10'
+      X-Apiary-Transaction-Id:
+      - 5583e8f533c2a3030067722d
+      Date:
+      - Fri, 19 Jun 2015 10:03:33 GMT
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: |-
+        { "status": "ok", "duration": 31.54, "users": [
+                {
+                    "email": "user1@clients.keboola.com",
+                    "uri": "/gdc/account/profile/3b761f4d31dcd3c28a4336117635dd38"
+                },
+                {
+                    "email": "user2@clients.keboola.com",
+                    "uri": "/gdc/account/profile/8a2c90bcae3ea2f7eafc875c0917e268"
+                }
+            ]
+        }
+    http_version:
+  recorded_at: Fri, 19 Jun 2015 10:03:33 GMT
+recorded_with: VCR 2.9.3

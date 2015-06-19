@@ -53,7 +53,7 @@ module Keboola
       # Sets attributes to writer's configuration
       def update_writer(writer_id, attributes: {})
         handle @client.post("writers/#{writer_id}", attributes.to_json) do |result|
-          result.success?
+          Job.new(result).ok?
         end
       end
 
@@ -159,21 +159,21 @@ module Keboola
       # Update table configuration
       def update_table(writer_id, table_id, optionals: {})
         handle @client.post("tables", { writerId: writer_id, tableId: table_id }.reverse_merge(optionals).to_json) do |result|
-          result.success?
+          Job.new(result).ok?
         end
       end
 
       # Update table column configuration
       def update_table_column(writer_id, table_id, column, optionals: {})
         handle @client.post("tables", { writerId: writer_id, tableId: table_id, column: column }.reverse_merge(optionals).to_json) do |result|
-          result.success?
+          Job.new(result).ok?
         end
       end
 
       # Bulk update table column configuration
       def bulk_update_table_column(writer_id, table_id, columns = [])
         handle @client.post("tables", { writerId: writer_id, tableId: table_id, columns: columns }.to_json) do |result|
-          result.success?
+          Job.new(result).ok?
         end
       end
 

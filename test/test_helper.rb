@@ -6,3 +6,5 @@ require 'minitest/autorun'
 # pull in the VCR setup
 require File.expand_path './support/vcr_setup.rb', __dir__
 
+
+KEBOOLA_STORAGE_API_TOKEN ||= ENV['KEBOOLA_STORAGE_API_TOKEN']

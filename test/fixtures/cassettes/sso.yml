@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://private-anon-df256c5fb-keboolagooddatawriter.apiary-mock.com/gooddata-writer/sso?email=user1@clients.keboola.com&pid=pr0j3ct_p1d&writerId=writer1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.1
+      X-Storageapi-Token:
+      - 123-abcdefghjklmnopqrstuvxyz
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 19 Jun 2015 00:21:09 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.4.40
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Cache-Control:
+      - must-revalidate, no-cache, no-store, private
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '959'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"ssoLink":"https:\/\/secure.gooddata.com\/gdc\/account\/customerlogin?sessionId=-----BEGIN+PGP+MESSAGE-----s0m3_l0000n6_h4sh","status":"ok","duration":202}'
+    http_version:
+  recorded_at: Fri, 19 Jun 2015 00:21:10 GMT
+recorded_with: VCR 2.9.3

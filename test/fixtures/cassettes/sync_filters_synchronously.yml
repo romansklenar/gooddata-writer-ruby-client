@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://private-anon-df256c5fb-keboolagooddatawriter.apiary-mock.com/gooddata-writer/sync-filters
+    body:
+      encoding: UTF-8
+      string: '{"queue":"secondary","writerId":"writer1"}'
+    headers:
+      User-Agent:
+      - Hurley v0.1
+      X-Storageapi-Token:
+      - 123-abcdefghjklmnopqrstuvxyz
+      Accept:
+      - application/json
+      Content-Type:
+      - application/octet-stream
+      Content-Length:
+      - '42'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Apiary-Ratelimit-Limit:
+      - '120'
+      X-Apiary-Ratelimit-Remaining:
+      - '117'
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,HEAD,POST,PUT,DELETE,TRACE,CONNECT
+      Access-Control-Max-Age:
+      - '10'
+      X-Apiary-Transaction-Id:
+      - 5584098b5d1fa9030057b9c4
+      Date:
+      - Fri, 19 Jun 2015 12:22:35 GMT
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: "{ \n    \"url\": \"https://syrup.keboola.com/queue/jobs/job_id\",\n
+        \   \"id\": \"job_id\"\n}"
+    http_version: 
+  recorded_at: Fri, 19 Jun 2015 12:22:35 GMT
+- request:
+    method: get
+    uri: https://private-anon-c1bf53b9c-syrupqueue.apiary-mock.com/queue/jobs/job_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.1
+      X-Storageapi-Token:
+      - 123-abcdefghjklmnopqrstuvxyz
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Apiary-Ratelimit-Limit:
+      - '120'
+      X-Apiary-Ratelimit-Remaining:
+      - '116'
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,HEAD,POST,PUT,DELETE,TRACE,CONNECT
+      Access-Control-Max-Age:
+      - '10'
+      X-Apiary-Transaction-Id:
+      - 5584098c189ce103000dbc53
+      Date:
+      - Fri, 19 Jun 2015 12:22:36 GMT
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: |2-
+                {
+                    "id": 123456,
+                    "runId": "123457",
+                    "lockName": "someComponent-123-456",
+                    "project": {
+                        "id": 123,
+                        "name": "Some project"
+                    },
+                    "token": {
+                        "id": 456,
+                        "description": "Token Description"
+                    },
+                    "component": "someComponent",
+                    "command": "run",
+                    "params": {},
+                    "result": {
+                        "message": "all is fine"
+                    },
+                    "status": "success",
+                    "process": {
+                        "host": "some.hostname.com",
+                        "pid": 1234
+                    },
+                    "createdTime": "2015-03-26T18:40:28+00:00",
+                    "startTime": "2015-03-26T18:40:31+00:00",
+                    "endTime": "2015-03-26T18:41:15+00:00",
+                    "durationSeconds": 44,
+                    "waitSeconds": 3
+                }
+    http_version: 
+  recorded_at: Fri, 19 Jun 2015 12:22:37 GMT
+recorded_with: VCR 2.9.3

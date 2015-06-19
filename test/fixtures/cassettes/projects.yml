@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://private-anon-df256c5fb-keboolagooddatawriter.apiary-mock.com/gooddata-writer/projects?writerId=writer1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.1
+      X-Storageapi-Token:
+      - 123-abcdefghjklmnopqrstuvxyz
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Apiary-Ratelimit-Limit:
+      - '120'
+      X-Apiary-Ratelimit-Remaining:
+      - '119'
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,HEAD,POST,PUT,DELETE,TRACE,CONNECT
+      Access-Control-Max-Age:
+      - '10'
+      X-Apiary-Transaction-Id:
+      - 5583e87c189ce103000d8b89
+      Date:
+      - Fri, 19 Jun 2015 10:01:32 GMT
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: |-
+        { "status": "ok", "duration": 31.54, "projects": [
+                {
+                    "pid": "l7eqkx6daomtv5iw2912p019anskzt1n",
+                    "active": 1,
+                    "main": 1
+                },
+                {
+                    "pid": "rcgtjwroldsctin8pzxxg1n1nwbgelhb",
+                    "active": 1
+                },
+                {
+                    "pid": "xjywplmhejceb6j3ezzlxiganmjavqio",
+                    "active": 1
+                }
+            ]
+        }
+    http_version: 
+  recorded_at: Fri, 19 Jun 2015 10:01:32 GMT
+recorded_with: VCR 2.9.3

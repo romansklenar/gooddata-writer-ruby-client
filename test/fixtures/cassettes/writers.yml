@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://private-anon-df256c5fb-keboolagooddatawriter.apiary-mock.com/gooddata-writer/writers
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.1
+      X-Storageapi-Token:
+      - 123-abcdefghjklmnopqrstuvxyz
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      X-Apiary-Ratelimit-Limit:
+      - '120'
+      X-Apiary-Ratelimit-Remaining:
+      - '119'
+      Content-Type:
+      - application/json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,HEAD,POST,PUT,DELETE,TRACE,CONNECT
+      Access-Control-Max-Age:
+      - '10'
+      X-Apiary-Transaction-Id:
+      - 55834ed8838cf90300991ffb
+      Date:
+      - Thu, 18 Jun 2015 23:06:00 GMT
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: "{ \n    \"status\": \"ok\", \n    \"duration\": 45.11, \n    \"writers\":
+        [\n        {\n            \"bucket\": \"sys.c-wr-gooddata-writer1\",\n            \"writer\":
+        \"gooddata\",\n            \"writerId\": \"writer1\",\n            \"gd\":
+        {\n                \"pid\": \"vcmxlgjsojfdsjfdsdskfsfdks\",\n                \"uid\":
+        \"dkgkfdreituigjfgfjkdgfkdfng\",\n                \"username\": \"user1@clients.keboola.com\",\n
+        \               \"password\": \"password\"\n            },\n            \"created\":
+        {\n                \"time\": \"2014-04-14 12:57:08\",\n                \"tokenId\":
+        11874,\n                \"tokenDescription\": \"writer@keboola.com\"\n            },\n
+        \           \"status\": \"ready\"\n        },\n        {\n            \"bucket\":
+        \"sys.c-wr-gooddata-writer2\",\n            \"writer\": \"gooddata\",\n            \"writerId\":
+        \"writer2\",\n            \"gd\": {\n                \"pid\": \"xcmxlgjsojfdsjfdsdskfsfdks\",\n
+        \               \"uid\": \"wwgkfdreituigjfgfjkdgfkdwre\",\n                \"username\":
+        \"user2@clients.keboola.com\",\n                \"password\": \"password2\"\n
+        \           },\n            \"created\": {\n                \"time\": \"2014-04-11
+        01:17:28\",\n                \"tokenId\": 11874,\n                \"tokenDescription\":
+        \"writer@keboola.com\"\n            },\n            \"status\": \"ready\"\n
+        \       }\n    ]\n}"
+    http_version: 
+  recorded_at: Thu, 18 Jun 2015 23:06:00 GMT
+recorded_with: VCR 2.9.3

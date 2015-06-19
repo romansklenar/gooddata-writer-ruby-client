@@ -1,0 +1,138 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://private-anon-df256c5fb-keboolagooddatawriter.apiary-mock.com/gooddata-writer/project-users?email=user6@clients.keboola.com&pid=qts6zrafhywwj4aafgt48jfwbm4zi5r7&writerId=writer1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.1
+      X-Storageapi-Token:
+      - 123-abcdefghjklmnopqrstuvxyz
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Fri, 19 Jun 2015 11:06:16 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.4.40
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Cache-Control:
+      - must-revalidate, no-cache, no-store, private
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '145'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"job_id","batch":120073043,"job":120073043,"status":"ok","url":"https:\/\/syrup.keboola.com\/gooddata-writer\/batch?writerId=writer1\u0026batchId=120073043"}'
+    http_version:
+  recorded_at: Fri, 19 Jun 2015 11:06:18 GMT
+- request:
+    method: get
+    uri: https://private-anon-c1bf53b9c-syrupqueue.apiary-mock.com/queue/jobs/job_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.1
+      X-Storageapi-Token:
+      - 123-abcdefghjklmnopqrstuvxyz
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 19 Jun 2015 11:06:19 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.4.40
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Cache-Control:
+      - must-revalidate, no-cache, no-store, private
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '438'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"job_id","runId":"123456","lockName":"someComponent-123-456","project":{"id":123,"name":"Some project"},"token":{"id":456,"description":"Token Description"},"component":"someComponent","command":"run","params":{"writerId":"writer1","config":"writer1","tasks":[{"definition":null,"name":"removeUserFromProject","params":{"email":"user6@clients.keboola.com","pid":"qts6zrafhywwj4aafgt48jfwbm4zi5r7"}}]},"result":{},"status":"processing","process":{"host":"some.hostname.com","pid":1234},"createdTime":"2015-06-19T13:06:17+02:00","startTime":"2015-06-19T13:06:19+02:00","endTime":null,"durationSeconds":null,"waitSeconds":null,"isFinished":false}'
+    http_version:
+  recorded_at: Fri, 19 Jun 2015 11:06:19 GMT
+- request:
+    method: get
+    uri: https://private-anon-c1bf53b9c-syrupqueue.apiary-mock.com/queue/jobs/job_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.1
+      X-Storageapi-Token:
+      - 123-abcdefghjklmnopqrstuvxyz
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 19 Jun 2015 11:06:25 GMT
+      Server:
+      - Apache
+      X-Powered-By:
+      - PHP/5.4.40
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - "*"
+      Access-Control-Allow-Headers:
+      - "*"
+      Cache-Control:
+      - must-revalidate, no-cache, no-store, private
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '445'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":123456,"runId":"123456","lockName":"someComponent-123-456","project":{"id":123,"name":"Some project"},"token":{"id":456,"description":"Token Description"},"component":"someComponent","command":"run","params":{"writerId":"writer1","config":"writer1","tasks":[{"definition":null,"name":"removeUserFromProject","params":{"email":"user6@clients.keboola.com","pid":"qts6zrafhywwj4aafgt48jfwbm4zi5r7"}}]},"result":{"0":[]},"status":"success","process":{"host":"some.hostname.com","pid":1234},"createdTime":"2015-06-19T13:06:17+02:00","startTime":"2015-06-19T13:06:19+02:00","endTime":"2015-06-19T13:06:23+02:00","durationSeconds":4,"waitSeconds":2,"isFinished":true}'
+    http_version:
+  recorded_at: Fri, 19 Jun 2015 11:06:26 GMT
+recorded_with: VCR 2.9.3
