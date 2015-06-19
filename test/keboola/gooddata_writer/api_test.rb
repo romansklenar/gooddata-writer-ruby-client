@@ -438,6 +438,11 @@ class Keboola::GoodDataWriter::ApiTest < Minitest::Test
     assert_equal "https://secure.gooddata.com/gdc/account/customerlogin?sessionId=-----BEGIN+PGP+MESSAGE-----s0m3_l0000n6_h4sh", url
   end
 
+  def test_it_can_raise_exception_on_invalid_request
+    VCR.insert_cassette 'sso_fail'
+    assert_raises Keboola::GoodDataWriter::ClientError do @api.sso('writer1', 'pr0j3ct_p1d', '') end
+  end
+
   def test_it_can_do_proxy_get_call
     VCR.insert_cassette 'proxy_get'
     result = @api.proxy(:get, 'writer1', 'query')
