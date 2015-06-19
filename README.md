@@ -1,5 +1,16 @@
 # Keboola::GoodDataWriter
 
+[![Quality](http://img.shields.io/codeclimate/github/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](https://codeclimate.com/github/romansklenar/gooddata-writer-ruby-client)
+[![Coverage](http://img.shields.io/codeclimate/coverage/github/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](https://codeclimate.com/github/romansklenar/gooddata-writer-ruby-client)
+[![Build](http://img.shields.io/travis-ci/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](https://travis-ci.org/romansklenar/gooddata-writer-ruby-client)
+[![Dependencies](http://img.shields.io/gemnasium/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](https://gemnasium.com/romansklenar/gooddata-writer-ruby-client)
+[![Downloads](http://img.shields.io/gem/dtv/gooddata-writer-ruby-client.svg?style=flat-square)](https://rubygems.org/gems/gooddata-writer-ruby-client)
+[![Tags](http://img.shields.io/github/tag/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](http://github.com/romansklenar/gooddata-writer-ruby-client/tags)
+[![Releases](http://img.shields.io/github/release/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](http://github.com/romansklenar/gooddata-writer-ruby-client/releases)
+[![Issues](http://img.shields.io/github/issues/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](http://github.com/romansklenar/gooddata-writer-ruby-client/issues)
+[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![Version](http://img.shields.io/gem/v/gooddata-writer-ruby-client.svg?style=flat-square)](https://rubygems.org/gems/gooddata-writer-ruby-client)
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/keboola/gooddata_writer`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
