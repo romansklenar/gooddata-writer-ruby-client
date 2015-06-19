@@ -1,6 +1,8 @@
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'keboola/gooddata_writer'
-
 require 'minitest/autorun'
 
 # pull in the VCR setup
