@@ -10,14 +10,14 @@ module Keboola
       attr_accessor :token, :client, :queue, :parser
 
 
-      def initialize(token:, endpoint: nil, client: nil, queue: nil, parser: nil)
-        @token  = token
+      def initialize(token: nil, endpoint: nil, client: nil, queue: nil, parser: nil)
+        @token  = token  || raise(ArgumentError, "token is required")
         @client = client || self.class.build_client(endpoint: endpoint || WRITER_ENDPOINT_URL, token: token)
         @queue  = queue  || self.class.build_client(endpoint: QUEUE_ENDPOINT_URL, token: token)
         @parser = parser || self.class.build_parser
       end
 
-      def self.build_client(token:, endpoint:)
+      def self.build_client(token: nil, endpoint: nil)
         Client.factory(token: token, endpoint: endpoint)
       end
 
