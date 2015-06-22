@@ -4,12 +4,12 @@
 [![Coverage](http://img.shields.io/codeclimate/coverage/github/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](https://codeclimate.com/github/romansklenar/gooddata-writer-ruby-client)
 [![Build](http://img.shields.io/travis-ci/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](https://travis-ci.org/romansklenar/gooddata-writer-ruby-client)
 [![Dependencies](http://img.shields.io/gemnasium/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](https://gemnasium.com/romansklenar/gooddata-writer-ruby-client)
-[![Downloads](http://img.shields.io/gem/dtv/gooddata-writer-ruby-client.svg?style=flat-square)](https://rubygems.org/gems/gooddata-writer-ruby-client)
 [![Tags](http://img.shields.io/github/tag/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](http://github.com/romansklenar/gooddata-writer-ruby-client/tags)
 [![Releases](http://img.shields.io/github/release/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](http://github.com/romansklenar/gooddata-writer-ruby-client/releases)
 [![Issues](http://img.shields.io/github/issues/romansklenar/gooddata-writer-ruby-client.svg?style=flat-square)](http://github.com/romansklenar/gooddata-writer-ruby-client/issues)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-[![Version](http://img.shields.io/gem/v/gooddata-writer-ruby-client.svg?style=flat-square)](https://rubygems.org/gems/gooddata-writer-ruby-client)
+[![Downloads](http://img.shields.io/gem/dtv/gooddata-writer-ruby-client.svg?style=flat-square)](https://rubygems.org/gems/keboola-gooddata-writer)
+[![Version](http://img.shields.io/gem/v/gooddata-writer-ruby-client.svg?style=flat-square)](https://rubygems.org/gems/keboola-gooddata-writer)
 
 
 Simple Ruby wrapper library for [Keboola GoodData Writer REST API](http://docs.keboolagooddatawriter.apiary.io/).
