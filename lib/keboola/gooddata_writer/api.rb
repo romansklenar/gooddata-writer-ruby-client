@@ -45,7 +45,8 @@ module Keboola
       # Creates new configuration bucket and either uses existing GoodData
       # project or creates new one along with dedicated GoodData user.
       def create_writer(writer_id, optionals: {}, async: true)
-        handle @client.post("writers", { writerId: writer_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.post("writers", params.to_json) do |result|
           job_handler(result, async)
         end
       end
@@ -77,21 +78,24 @@ module Keboola
       # Creates new configuration bucket and either uses existing GoodData
       # project or creates new one along with dedicated GoodData user.
       def create_project(writer_id, optionals: {}, async: true)
-        handle @client.post("projects", { writerId: writer_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.post("projects", params.to_json) do |result|
           job_handler(result, async)
         end
       end
 
       # Creates new GoodData project for the writer and enqueues the old for deletion
       def reset_project(writer_id, optionals: {}, async: true)
-        handle @client.post("reset-project", { writerId: writer_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.post("reset-project", params.to_json) do |result|
           job_handler(result, async)
         end
       end
 
       # Upload project to GoodData
       def upload_project(writer_id, optionals: {}, async: true)
-        handle @client.post("upload-project", { writerId: writer_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.post("upload-project", params.to_json) do |result|
           job_handler(result, async)
         end
       end
@@ -108,8 +112,8 @@ module Keboola
 
       # Creates new GoodData user in Keboola domain.
       def create_user(writer_id, email, password, first_name, last_name, optionals: {}, async: true)
-        required = { writerId: writer_id, email: email, password: password, firstName: first_name, lastName: last_name }
-        handle @client.post("users", required.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id, email: email, password: password, firstName: first_name, lastName: last_name }.reverse_merge(optionals)
+        handle @client.post("users", params.to_json) do |result|
           job_handler(result, async)
         end
       end
@@ -126,15 +130,16 @@ module Keboola
 
       # Adds GoodData user to specified project.
       def add_project_users(writer_id, project_id, email, role, optionals: {}, async: true)
-        required = { writerId: writer_id, pid: project_id, email: email, role: role }
-        handle @client.post("project-users", required.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id, pid: project_id, email: email, role: role }.reverse_merge(optionals)
+        handle @client.post("project-users", params.to_json) do |result|
           job_handler(result, async)
         end
       end
 
       # Remove user from specified project.
       def remove_project_users(writer_id, project_id, email, async: true)
-        handle @client.delete("project-users", { writerId: writer_id, pid: project_id, email: email }) do |result|
+        params = { writerId: writer_id, pid: project_id, email: email }
+        handle @client.delete("project-users", params) do |result|
           job_handler(result, async)
         end
       end
@@ -158,35 +163,40 @@ module Keboola
 
       # Update table configuration
       def update_table(writer_id, table_id, optionals: {})
-        handle @client.post("tables", { writerId: writer_id, tableId: table_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id, tableId: table_id }.reverse_merge(optionals)
+        handle @client.post("tables", params.to_json) do |result|
           job_handler(result).ok?
         end
       end
 
       # Update table column configuration
       def update_table_column(writer_id, table_id, column, optionals: {})
-        handle @client.post("tables", { writerId: writer_id, tableId: table_id, column: column }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id, tableId: table_id, column: column }.reverse_merge(optionals)
+        handle @client.post("tables", params.to_json) do |result|
           job_handler(result).ok?
         end
       end
 
       # Bulk update table column configuration
       def bulk_update_table_column(writer_id, table_id, columns = [])
-        handle @client.post("tables", { writerId: writer_id, tableId: table_id, columns: columns }.to_json) do |result|
+        params = { writerId: writer_id, tableId: table_id, columns: columns }
+        handle @client.post("tables", params.to_json) do |result|
           job_handler(result).ok?
         end
       end
 
       # Upload selected table to GoodData
       def upload_table(writer_id, table_id, optionals: {}, async: true)
-        handle @client.post("upload-table", { writerId: writer_id, tableId: table_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id, tableId: table_id }.reverse_merge(optionals)
+        handle @client.post("upload-table", params.to_json) do |result|
           job_handler(result, async)
         end
       end
 
       # Update model of selected table in GoodData
       def update_table_model(writer_id, optionals: {}, async: true)
-        handle @client.post("update-model", { writerId: writer_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.post("update-model", params.to_json) do |result|
           job_handler(result, async)
         end
       end
@@ -194,14 +204,16 @@ module Keboola
 
       # Remove dataset in GoodData project belonging to the table and reset it's export status
       def reset_table(writer_id, table_id, optionals: {}, async: true)
-        handle @client.post("reset-table", { writerId: writer_id, tableId: table_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id, tableId: table_id }.reverse_merge(optionals)
+        handle @client.post("reset-table", params.to_json) do |result|
           job_handler(result, async)
         end
       end
 
       # Selectively upload date dimension (must be already configured in Writer)
       def upload_date_dimension(writer_id, name, optionals: {}, async: true)
-        handle @client.post("reset-table", { writerId: writer_id, name: name }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id, name: name }.reverse_merge(optionals)
+        handle @client.post("reset-table", params.to_json) do |result|
           job_handler(result, async)
         end
       end
@@ -211,14 +223,16 @@ module Keboola
 
       # Load data to selected tables in GoodData
       def load_data(writer_id, optionals: {}, async: true)
-        handle @client.post("load-data", { writerId: writer_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.post("load-data", params.to_json) do |result|
           job_handler(result, async)
         end
       end
 
       # Load data to selected tables in GoodData concurrently
       def load_data_multi(writer_id, optionals: {}, async: true)
-        handle @client.post("load-data-multi", { writerId: writer_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.post("load-data-multi", params.to_json) do |result|
           job_handler(result, async)
         end
       end
@@ -226,14 +240,15 @@ module Keboola
       # === Filter resource
 
       def filters(writer_id, optionals: {})
-        handle @client.get("filters", { writerId: writer_id }.reverse_merge(optionals)) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.get("filters", params) do |result|
           result["filters"]
         end
       end
 
       def create_filter(writer_id, project_id, name, attribute, value, operator = '=', optionals: {}, async: true)
-        required = { writerId: writer_id, pid: project_id, name: name, attribute: attribute, operator: operator, value: value }
-        handle @client.post("filters", required.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id, pid: project_id, name: name, attribute: attribute, operator: operator, value: value }.reverse_merge(optionals)
+        handle @client.post("filters", params.to_json) do |result|
           job_handler(result, async)
         end
       end
@@ -249,29 +264,32 @@ module Keboola
 
       # Get Filters for Projects
       def filters_projects(writer_id, optionals: {})
-        handle @client.get("filters-projects", { writerId: writer_id }.reverse_merge(optionals)) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.get("filters-projects", params) do |result|
           result["filters"]
         end
       end
 
       # Get Filters for Users
       def filters_users(writer_id, optionals: {})
-        handle @client.get("filters-users", { writerId: writer_id }.reverse_merge(optionals)) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.get("filters-users", params) do |result|
           result["filters"]
         end
       end
 
       # Assign Filter to User
       def assign_filters_users(writer_id, email, filters = [], optionals: {}, async: true)
-        required = { writerId: writer_id, email: email, filters: filters }
-        handle @client.post("filters-users", required.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id, email: email, filters: filters }.reverse_merge(optionals)
+        handle @client.post("filters-users", params.to_json) do |result|
           job_handler(result, async)
         end
       end
 
       # Synchronizes filters in GoodData project according to writer's configuration
       def sync_filters(writer_id, optionals: {}, async: true)
-        handle @client.post("sync-filters", { writerId: writer_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id }.reverse_merge(optionals)
+        handle @client.post("sync-filters", params.to_json) do |result|
           job_handler(result, async)
         end
       end
@@ -281,26 +299,28 @@ module Keboola
 
       # Execute selected reports in GoodData
       def execute_reports(writer_id, project_id, optionals: {}, async: true)
-        handle @client.post("execute-reports", { writerId: writer_id, pid: project_id }.reverse_merge(optionals).to_json) do |result|
+        params = { writerId: writer_id, pid: project_id }.reverse_merge(optionals)
+        handle @client.post("execute-reports", params.to_json) do |result|
           job_handler(result, async)
         end
       end
 
       # Call to obtain an SSO link for user
       def sso(writer_id, project_id, email, optionals: {})
-        handle @client.get("sso", { writerId: writer_id, pid: project_id, email: email }.reverse_merge(optionals)) do |result|
+        params = { writerId: writer_id, pid: project_id, email: email }.reverse_merge(optionals)
+        handle @client.get("sso", params) do |result|
           result["ssoLink"]
         end
       end
 
       # Simple proxy for direct calls to GoodData API
       def proxy(method, writer_id, query, optionals: {}, async: true)
-        required = { writerId: writer_id, query: query }
+        params = { writerId: writer_id, query: query }.reverse_merge(optionals)
         case method.to_sym
           when :get
-            handle @client.get("proxy", required.reverse_merge(optionals))
+            handle @client.get("proxy", params)
           when :post
-            handle @client.post("proxy", required.reverse_merge(optionals).to_json) do |result|
+            handle @client.post("proxy", params.to_json) do |result|
               job_handler(result, async)
             end
         end
