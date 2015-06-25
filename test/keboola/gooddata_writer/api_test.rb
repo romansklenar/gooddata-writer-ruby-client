@@ -149,7 +149,7 @@ class Keboola::GoodDataWriter::ApiTest < Minitest::Test
 
   def test_it_can_create_user_synchronously
     VCR.insert_cassette 'create_user_synchronously'
-    job = @api.create_user('writer1', 'user4@clients.keboola.com', 'W1nt3rIsC0m1ng', 'John', 'Snow', optionals: { queue: 'secondary' }, async: true)
+    job = @api.create_user('writer1', 'user4@clients.keboola.com', 'W1nt3rIsC0m1ng', 'Jon', 'Snow', optionals: { queue: 'secondary' }, async: true)
     assert_job_info job
   end
 

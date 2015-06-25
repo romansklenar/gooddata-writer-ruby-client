@@ -5,7 +5,7 @@ http_interactions:
     uri: https://private-anon-df256c5fb-keboolagooddatawriter.apiary-mock.com/gooddata-writer/users
     body:
       encoding: UTF-8
-      string: '{"queue":"secondary","writerId":"writer1","email":"user4@clients.keboola.com","password":"W1nt3rIsC0m1ng","firstName":"John","lastName":"Snow"}'
+      string: '{"queue":"secondary","writerId":"writer1","email":"user4@clients.keboola.com","password":"W1nt3rIsC0m1ng","firstName":"Jon","lastName":"Snow"}'
     headers:
       User-Agent:
       - Hurley v0.1

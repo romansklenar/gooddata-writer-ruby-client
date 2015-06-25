@@ -45,13 +45,13 @@ api.writer('MyWriter') # {"bucket"=>"sys.c-wr-gooddata-writer1", "writer"=>"good
 api.create_project('MyWriter', optionals: { name: 'KBC - MyProject - MyWriter' }) # <Keboola::GoodDataWriter::Job url="https://syrup.keboola.com/queue/jobs/123456", id="123456">
 
 # create user
-api.create_user('MyWriter', 'john.snow@test.keboola.com', 't0pS3cr3t', 'John', 'Snow') # <Keboola::GoodDataWriter::Job url="https://syrup.keboola.com/queue/jobs/123456", id="123456">
+api.create_user('MyWriter', 'jon.snow@test.keboola.com', 't0pS3cr3t', 'Jon', 'Snow') # <Keboola::GoodDataWriter::Job url="https://syrup.keboola.com/queue/jobs/123456", id="123456">
 
 # assign user to existing GoodData project
-api.add_project_users('MyWriter', 'xjywplmhejceb6j3ezzlxiganmjavqio', 'john.snow@test.keboola.com', 'editor') #<Keboola::GoodDataWriter::Job url="https://syrup.keboola.com/queue/jobs/123456", id="123456">
+api.add_project_users('MyWriter', 'xjywplmhejceb6j3ezzlxiganmjavqio', 'jon.snow@test.keboola.com', 'editor') #<Keboola::GoodDataWriter::Job url="https://syrup.keboola.com/queue/jobs/123456", id="123456">
 
 # getretreive GoodData SSO link
-api.sso('MyWriter', 'xjywplmhejceb6j3ezzlxiganmjavqio', 'john.snow@test.keboola.com') # "https://secure.gooddata.com/gdc/account/customerlogin?sessionId=-----BEGIN+PGP+MESSAGE-----s0m3_l0000n6_h4sh"
+api.sso('MyWriter', 'xjywplmhejceb6j3ezzlxiganmjavqio', 'jon.snow@test.keboola.com') # "https://secure.gooddata.com/gdc/account/customerlogin?sessionId=-----BEGIN+PGP+MESSAGE-----s0m3_l0000n6_h4sh"
 ```
 
 ## Development
