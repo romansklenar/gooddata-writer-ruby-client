@@ -13,6 +13,7 @@ module Keboola
         client.header[:accept] = "application/json"
         client.request_options.redirection_limit = 5
         client.request_options.timeout = 5
+        client.ssl_options.skip_verification = true
         client
       end
     end
