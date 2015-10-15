@@ -250,7 +250,11 @@ module Keboola
         params = { writerId: writer_id, query: query }.reverse_merge(optionals)
         case method.to_sym
           when :get
-            handle @client.get("proxy", params)
+            if block_given?
+              handle(@client.get("proxy", params)) { |result| yield result }
+            else
+              handle(@client.get("proxy", params))
+            end
           when :post
             handle(@client.post("proxy", params.to_json)) { |result| job_handler(result, async) }
         end
