@@ -18,7 +18,7 @@ module Keboola
           begin
             # try to parse response body to retreive more detailed API error message
             result = Parser.parse(ex.body)
-            super("the server responded with status #{ex.status_code} and message '#{result['message']}'")
+            super("the server responded with status #{ex.status_code} and message \"#{result['message']}\"")
           rescue ParsingError
             super("the server responded with status #{ex.status_code}")
           ensure
