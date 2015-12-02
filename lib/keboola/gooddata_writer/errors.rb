@@ -4,6 +4,15 @@ module Keboola
     class Error < RuntimeError; end
     class ParsingError < Error; end
 
+    class JobError < Error
+      attr_reader :job
+
+      def initialize(job)
+        @job = job
+        super job.result.fetch("message")
+      end
+    end
+
     class ResponseError < Error
       attr_reader :response
 

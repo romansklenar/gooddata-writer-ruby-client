@@ -19,6 +19,10 @@ module Keboola
       def pending?
         %w[waiting processing terminating].include?(status)
       end
+
+      def error?
+        %w[cancelled error terminated].include?(status)
+      end
     end
 
   end

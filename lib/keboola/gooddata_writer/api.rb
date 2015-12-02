@@ -279,6 +279,8 @@ module Keboola
           job = job(job_id)
           sleep 5 unless job.finished?
         end until job.finished?
+
+        raise JobError.new(job) if job.error?
         job
       end
 
